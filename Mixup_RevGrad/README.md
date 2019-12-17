@@ -1,6 +1,6 @@
 # Adversarial Domain Adaptation with Domain Mixup
 
-This is the implementation of Domain Mixup strategy on a classifical adversarial domain adaptation method, RevGrad.
+This is the implementation of Domain Mixup strategy on a classifical adversarial domain adaptation method, [RevGrad](https://arxiv.org/abs/1409.7495v2).
 
 ## Requirements
 
