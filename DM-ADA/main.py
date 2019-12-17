@@ -11,7 +11,6 @@ import torchvision.datasets as dset
 import torchvision.transforms as transforms
 import numpy as np
 import trainer_mixed
-import trainer_mixed_old
 
 def main():
 
@@ -28,7 +27,7 @@ def main():
     parser.add_argument('--lr', type=float, default=0.0005, help='learning rate, default=0.0005')
     parser.add_argument('--gpu', type=int, default=0, help='GPU to use, -1 for CPU training')
     parser.add_argument('--outf', default='./results', help='folder to output images and model checkpoints')
-    parser.add_argument('--method', default='DM-UDA', help='Method to train| DM-UDA, sourceonly')
+    parser.add_argument('--method', default='DM-ADA', help='Method to train| DM-ADA, sourceonly')
     parser.add_argument('--manualSeed', type=int, default = 400, help='manual seed')
     parser.add_argument('--KL_weight', type=float, default = 1.0, help='weight for KL divergence')
     parser.add_argument('--adv_weight', type=float, default = 0.1, help='weight for adv loss')
@@ -121,15 +120,15 @@ def main():
     nclasses = len(source_train.classes)
     
     # Training
-    if opt.method == 'DM-UDA':
-        DM_UDA_trainer = trainer_mixed_old.DM_UDA(opt, nclasses, mean, std, source_trainloader,
+    if opt.method == 'DM-ADA':
+        DM_ADA_trainer = trainer_mixed.DM_ADA(opt, nclasses, mean, std, source_trainloader,
                                                   source_valloader, target_trainloader, target_valloader)
-        DM_UDA_trainer.train()
+        DM_ADA_trainer.train()
     elif opt.method == 'sourceonly':
-        sourceonly_trainer = trainer_mixed_old.Sourceonly(opt, nclasses, source_trainloader, target_valloader)
+        sourceonly_trainer = trainer_mixed.Sourceonly(opt, nclasses, source_trainloader, target_valloader)
         sourceonly_trainer.train()
     else:
-        raise ValueError('method argument should be DM-UDA or sourceonly')
+        raise ValueError('method argument should be DM-ADA or sourceonly')
 
 if __name__ == '__main__':
     main()

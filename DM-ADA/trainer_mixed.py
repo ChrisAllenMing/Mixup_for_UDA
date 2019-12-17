@@ -12,7 +12,7 @@ import random
 import os, sys
 
 
-class DM_UDA(object):
+class DM_ADA(object):
 
     def __init__(self, opt, nclasses, mean, std, source_trainloader, source_valloader, target_trainloader,
                  target_valloader):
