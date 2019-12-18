@@ -292,67 +292,6 @@ class DM_ADA(object):
 
                 curr_iter += 1
 
-                # # Updating D network
-                #
-                # self.netD.zero_grad()
-                #
-                # src_realoutputD_s, src_realoutputD_c, _ = self.netD(src_inputs_unnormv)
-                # errD_src_real_s = self.criterion_s(src_realoutputD_s, reallabelv)
-                # errD_src_real_c = self.criterion_c(src_realoutputD_c, src_labelsv)
-                #
-                # src_fakeoutputD_s, src_fakeoutputD_c, _ = self.netD(src_gen)
-                # errD_src_fake_s = self.criterion_s(src_fakeoutputD_s, fakelabelv)
-                #
-                # tgt_fakeoutputD_s, tgt_fakeoutputD_c, _ = self.netD(tgt_gen)
-                # errD_tgt_fake_s = self.criterion_s(tgt_fakeoutputD_s, fakelabelv)
-                #
-                # mix_s, _, _ = self.netD(mix_samples)
-                # errD_mix = self.criterion_s(mix_s, mix_labelv)
-                #
-                # mix_gen_s, _, _ = self.netD(mix_gen)
-                # errD_mix_gen = self.criterion_s(mix_gen_s, fakelabelv)
-                #
-                # errD = errD_src_real_c + errD_src_real_s + errD_src_fake_s + errD_tgt_fake_s + errD_mix + errD_mix_gen
-                # errD.backward(retain_graph=True)
-                # self.optimizerD.step()
-                #
-                # # Updating G network
-                #
-                # self.netG.zero_grad()
-                #
-                # errG_src_c = self.criterion_c(src_fakeoutputD_c, src_labelsv)
-                # errG_src_s = self.criterion_s(src_fakeoutputD_s, reallabelv)
-                # errG_mix_gen_s = self.criterion_s(mix_gen_s, reallabelv)
-                #
-                # errG = errG_src_c + errG_src_s + errG_mix_gen_s
-                # errG.backward(retain_graph=True)
-                # self.optimizerG.step()
-                #
-                # # Updating C network
-                #
-                # self.netC.zero_grad()
-                # errC = self.criterion_c(outC_src_logit, src_labelsv)
-                # errC.backward(retain_graph=True)
-                # self.optimizerC.step()
-                #
-                # # Updating F network
-                #
-                # self.netF.zero_grad()
-                # err_KL_src = torch.mean(0.5 * torch.sum(torch.exp(src_sd) + src_mn**2 - 1. - src_sd, 1))
-                # err_KL_tgt = torch.mean(0.5 * torch.sum(torch.exp(tgt_sd) + tgt_mn**2 - 1. - tgt_sd, 1))
-                # err_KL = (err_KL_src + err_KL_tgt) * (self.opt.KL_weight)
-                #
-                # errF_fromC = self.criterion_c(outC_src_logit, src_labelsv)
-                # errF_src_fromD = self.criterion_c(src_fakeoutputD_c, src_labelsv)*(self.opt.adv_weight)
-                # errF_tgt_fromD = self.criterion_s(tgt_fakeoutputD_s, reallabelv)*(self.opt.adv_weight*self.opt.gamma)
-                # errF_mix_fromD = self.criterion_s(mix_gen_s, reallabelv)*(self.opt.adv_weight*self.opt.delta)
-                #
-                # errF = err_KL + errF_fromC + errF_src_fromD + errF_tgt_fromD + errF_mix_fromD
-                # errF.backward()
-                # self.optimizerF.step()
-                #
-                # curr_iter += 1
-
                 # print training information
                 if ((i + 1) % 50 == 0):
                     text_format = 'epoch: {}, iteration: {}, errD: {}, errG: {}, ' \
