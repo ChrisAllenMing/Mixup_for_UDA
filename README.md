@@ -27,9 +27,9 @@ If this work helps your research, please cite the following paper.
 @inproceedings{xu2020adversarial,
   author    = {Minghao Xu and Jian Zhang and Bingbing Ni and Teng Li and Chengjie Wang and Qi Tian and Wenjun Zhang},
   title     = {Adversarial Domain Adaptation with Domain Mixup},
-  booktitle = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence},
+  booktitle = {The Thirty-Fourth AAAI Conference on Artificial Intelligence},
   pages     = {6502--6509},
-  publisher = {{AAAI} Press},
+  publisher = {AAAI Press},
   year      = {2020}
 }
 ```
