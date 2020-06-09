@@ -22,12 +22,14 @@ This is the implementation of Adversarial Domain Adaptation with Domain Mixup in
 
 ## Citation
 
-If this work helps your research, please cite the following paper (This will be updated when the AAAI paper is publicized).
+If this work helps your research, please cite the following paper.
 ```
-@article{xu2019adversarial,
-  title={Adversarial Domain Adaptation with Domain Mixup},
-  author={Xu, Minghao and Zhang, Jian and Ni, Bingbing and Li, Teng and Wang, Chengjie and Tian, Qi and Zhang, Wenjun},
-  journal={arXiv preprint arXiv:1912.01805},
-  year={2019}
+@inproceedings{xu2020adversarial,
+  author    = {Minghao Xu and Jian Zhang and Bingbing Ni and Teng Li and Chengjie Wang and Qi Tian and Wenjun Zhang},
+  title     = {Adversarial Domain Adaptation with Domain Mixup},
+  booktitle = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence},
+  pages     = {6502--6509},
+  publisher = {{AAAI} Press},
+  year      = {2020}
 }
 ```
